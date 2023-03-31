@@ -11,7 +11,36 @@ body {
   position: relative;
   width: 100%;
   height: 100vh;
-  /* background: rgb(138, 138, 204); */
+  background-size: cover;
+  overflow: hidden;
+}
+
+.body-bg {
+  width: 100%;
+  height: 100vh;
+  transition: all 1s ease-in-out;
+}
+
+body.animate {
+  animation: showImg .2s linear 1;
+}
+
+
+@keyframes showImg {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+button,
+input {
+  background: none;
+  outline: none;
+  border: none;
 }
 
 .weather-wrapper {
@@ -31,5 +60,123 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), #58585849;
+  border-radius: 55px;
   padding: 10px 15px;
+}
+
+.search-input {
+  font-size: 30px;
+  line-height: 45px;
+  color: #fff;
+  margin-left: 30px;
+}
+
+.search-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3 ease-in-out;
+}
+
+.search-icon:hover {
+  background: #ffffffa9;
+}
+
+.search-icon i {
+  font-size: 30px;
+  height: 30px;
+  color: #000;
+}
+
+.continent {
+  padding-top: 40px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all 1 ease-in-out;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icons li {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: rgba(217, 217, 217, 0.1);
+  border: 1.5px solid #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.social-icons li:hover {
+  transform: translateY(-3px);
+  background: #fff;
+}
+
+.social-icons li a {
+  color: #fff;
+}
+
+.social-icons li:hover a {
+  color: #000;
+}
+
+.social-icons li a i {
+  font-size: 25px;
+}
+
+.city-name {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 60px;
+  text-align: center;
+  color: rgba(249, 249, 249, 0.98);
+  margin-bottom: 20px;
+}
+
+.temperature {
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 75px;
+  text-align: center;
+  color: rgba(249, 249, 249, 0.98);
+  margin-bottom: 10px;
+}
+
+.weather {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  color: rgba(249, 249, 249, 0.98);
+  margin-bottom: 7px;
+}
+
+img.weather-icon {
+  width: 50px;
+}
+
+.weather .text {
+  margin-bottom: 0;
 }

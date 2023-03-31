@@ -1,26 +1,53 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+      crossorigin="anonymous" 
+      referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style/style.css" />
     <title>Weather App</title>
   </head>
   <body>
+    <img src="images/permission.png" alt="img" class="body-bg">
     <div class="weather-wrapper">
-      <div class="search-wrapper">
-        <input type="text" placeholder="Search..." />
+      <form class="search-wrapper">
+        <input type="text" placeholder="Search..." class="search-input" required/>
+        <button class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+
+      <div class="continent">
+        <!-- <h2 class="city-name">Weather in Chennai</h2>
+        <h4 class="temperature">32 °C</h4>
+        <div class="weather">
+          <img src="images/sun1.png" alt="sun" class="weather-icon">
+          <span class="text">Sunny</span>
+        </div>
+        <p class="text">
+          Humidity: 75%
+        </p>
+        <p class="text">Wind Speed: 3.4 km/hr</p> -->
       </div>
 
-      <div class="social-icons">
-        <ul>
-          <li>Lorem, ipsum.</li>
-          <li></li>
-          <li>Lorem ipsum dolor sit amet.</li>
-        </ul>
-      </div>
+      <ul class="social-icons">
+          <li>
+            <a href="https://facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          </li>
+          <li>
+            <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+          </li>
+          <li>
+            <a href="https://instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i>  </a>
+          </li>
+      </ul>
     </div>
+    <script src="js/forecast.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
