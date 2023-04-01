@@ -3,10 +3,10 @@ const weather_icon = document.querySelector(".weather-icon");
 const searchBtn = document.querySelector("button");
 const searchInput = document.querySelector(".search-input");
 const bodyImg = document.querySelector(".body-bg");
+const loader = document.querySelector(".loader");
 
 // setWeather
 const setWeather = (weather) => {
-  // console.log(weather);
   document.querySelector("body").classList.remove("animate");
   bodyImg.src = "";
   bodyImg.style.transition = "all 1s";
@@ -58,15 +58,19 @@ const getWeather = async (city) => {
 // get location
 searchBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  loader.style.display = "block";
 
   const cityName = searchInput.value.trim();
   if (cityName) {
     searchInput.value = "";
-    getWeather(cityName).then((data) => {
-      if (data.name) setWeather(data);
-      else
-        card_details.innerHTML = `<h2 class="city-name text-center">Location not found</h2>`;
-      // console.log(data);
-    });
+    getWeather(cityName)
+      .then((data) => {
+        if (data.name) setWeather(data);
+        else
+          card_details.innerHTML = `<h2 class="city-name text-center">Location not found</h2>`;
+      })
+      .finally(() => {
+        loader.style.display = "none";
+      });
   }
 });

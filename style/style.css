@@ -184,6 +184,14 @@ img.weather-icon {
   margin-bottom: 0;
 }
 
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
 @media (max-width: 1400px) {
   .weather-wrapper {
     padding: 30px;
@@ -218,6 +226,10 @@ img.weather-icon {
   .social-icons li a i {
     font-size: 20px;
   }
+
+  .social-icons li a {
+    height: 21px;
+  }
   .city-name {
     font-size: 30px;
     line-height: 50px;
@@ -248,5 +260,14 @@ img.weather-icon {
 @media (max-width: 678px) {
   .weather-wrapper {
     width: 85%;
+  }
+}
+
+@media (max-width: 576px) {
+  .weather-wrapper {
+    width: 90%;
+  }
+  .search-input {
+    width: 70%;
   }
 }
