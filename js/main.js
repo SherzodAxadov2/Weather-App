@@ -6,6 +6,7 @@ const bodyImg = document.querySelector(".body-bg");
 
 // setWeather
 const setWeather = (weather) => {
+  // console.log(weather);
   document.querySelector("body").classList.remove("animate");
   bodyImg.src = "";
   bodyImg.style.transition = "all 1s";
@@ -30,21 +31,21 @@ const setWeather = (weather) => {
   }
   card_details.innerHTML = ``;
   card_details.innerHTML += `
-    <h2 class="city-name">Weather in ${weather.name}, ${
+      <h2 class="city-name">Weather in ${weather.name}, ${
     weather?.sys?.country
   }</h2>
-    <h4 class="temperature">${Math.round(weather.main.temp)} °C</h4>
-    <div class="weather">
-      <img src="https://openweathermap.org/img/wn/${
-        weather.weather[0].icon
-      }@2x.png" alt="sun" class="weather-icon">
-      <span class="text">${weather.weather[0].main}</span>
-    </div>
-    <p class="text">
-      Humidity: ${weather.main.humidity}%
-    </p>
-    <p class="text">Wind Speed: ${weather.wind.speed} km/hr</p>
-  `;
+      <h4 class="temperature">${Math.round(weather.main.temp)} °C</h4>
+      <div class="weather">
+        <img src="https://openweathermap.org/img/wn/${
+          weather.weather[0].icon
+        }@2x.png" alt="sun" class="weather-icon">
+        <span class="text">${weather.weather[0].main}</span>
+      </div>
+      <p class="text">
+        Humidity: ${weather.main.humidity}%
+      </p>
+      <p class="text">Wind Speed: ${weather.wind.speed} km/hr</p>
+    `;
 };
 
 // get the weather
@@ -61,6 +62,11 @@ searchBtn.addEventListener("click", (e) => {
   const cityName = searchInput.value.trim();
   if (cityName) {
     searchInput.value = "";
-    getWeather(cityName).then((data) => setWeather(data));
+    getWeather(cityName).then((data) => {
+      if (data.name) setWeather(data);
+      else
+        card_details.innerHTML = `<h2 class="city-name text-center">Location not found</h2>`;
+      // console.log(data);
+    });
   }
 });
